@@ -1,3 +1,4 @@
+// Package numbertowords allows the number between 1 to 100000 to convert to words.
 package numbertowords
 
 import "errors"
@@ -90,12 +91,12 @@ func Convert(index int) (string, error) {
 	units := index % 10
 
 	if tens < 2 {
-		return result2 + " " + result1 + result + words[index], nil
+		return result2 + result1 + result + words[index], nil
 	}
 
 	if units == 0 {
-		return result2 + " " + result1 + result + tenwords[tens], nil
+		return result2 + result1 + result + tenwords[tens], nil
 	}
 
-	return result2 + " " + result1 + result + tenwords[tens] + " " + words[units], nil
+	return result2 + result1 + result + tenwords[tens] + " " + words[units], nil
 }
